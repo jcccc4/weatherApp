@@ -1,8 +1,13 @@
-async function getCity (city='Cavite'){
+import { State } from "../state/state";
 
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=984ba93ae0494847b60133524220907&q=${city}&aqi=no`, {mode: 'cors'});
-    const getData = await response.json();
-    console.log(getData)
+async function getCity (city=''){
+
+    try {
+        let res =  await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d9702c7938f6ae5245906643fb2d1a51`, {mode: 'cors'});
+        return await res.json();
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 export default getCity;

@@ -1,9 +1,13 @@
 function search (){
     const search = document.querySelector('.search')
     search.innerHTML = `
-        <label for="site-search">Search the site:</label>
+        <form class = "srcForm">
+        <label for="site-search">Search Location:</label>
         <input type="search" id="site-search" name="q">
-        <button>Search</button>`
+        <input type="submit" class="srcBtn" value="Search">
+        </form>`
+        
+        
 }
 
 export default search;
